@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/interaction
+      database: interaction
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+jwt:
+  secret: "your-256-bit-secret-key-for-jwt-signature-change-this-in-production"
+  expiration: 86400000
+  issuer: "ups18"
+  audience: "everyone"
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+    display-request-duration: true
+    default-models-expand-depth: 3
+    doc-expansion: none
+  api-docs:
+    path: /api-docs
+  packages-to-scan: com.example.interaction
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+
+app:
+  url: "http://localhost:8080"
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    com.example.interaction: DEBUG
