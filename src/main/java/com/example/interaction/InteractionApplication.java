@@ -10,4 +10,3 @@ public class InteractionApplication {
         System.out.println("Growfy Auth Application started on http://localhost:8080");
     }
 }
- 
